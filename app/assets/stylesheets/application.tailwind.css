@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  h1 { @apply  text-3xl uppercase font-extralight }
+  h2 { @apply text-sm }
+  h3 { @apply text-lg font-medium italic }
+  .forms { @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full }
+  .button { @apply ml-4 rounded-lg  px-2 bg-yellow-400 hover:bg-yellow-500 font-light}
+  .button-header { @apply p-2 bg-transparent shadow-md hover:shadow-yellow-400/100 rounded-md}
+}
+
+

@@ -1,0 +1,14 @@
+<div id="<%= dom_id menu %>" class="flex justify-center gap-2 "> 
+    
+  <div class="mx-4 order-last self-center ">
+    <%= image_tag(menu.image_url, class:"rounded-md", size: "500x500") %>
+  </div>
+  <div class=" self-center text-left">
+    <h1 class="font-bold text-2xl my-3 text-yellow-400"><%= menu.title %></h1>
+    <h2 class="my-2"><%= menu.description %></h2>
+    <h3 ><%= number_to_currency ( menu.price), precision: 3 %> 
+      <%= button_to 'Prove agora', line_items_path(menu_id: menu), form_class: 'inline',
+          class: 'button' %>
+    </h3>
+  </div>
+</div>

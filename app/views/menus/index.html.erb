@@ -1,0 +1,25 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium
+       rounded-lg inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <div><h1 class="font-bold ">dishes</h1></div>
+  <div id="products" class="grid grid-cols-3 place-content-around h-full p-6 ">
+     
+    <% @menus.each do |menu| %>
+      <div class="w-9/12 my-5 border shadow-lg text-center rounded-lg">
+        <a href="/menus/<%= menu.id %>">
+          <%= image_tag( menu.image_url, class: 'rounded-lg', size: "500x500" )%>
+          <h1 class="my-5 text-2xl font-bold"><%= menu.title %></h1>
+        </a>
+        <p class="my-5"><%= truncate(strip_tags(menu.description), length: 80)%></p>
+        <p ><%= number_to_currency ( menu.price), precision: 3 %></p>
+        <%= button_to 'Prove agora', line_items_path(menu_id: menu), form_class: 'inline',
+            class: 'button my-5 p-2' %>
+      </div>
+    <% end %>
+  </div>
+</div>
